@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1742005319.55662 "worksheet.xdv" "worksheet.pdf" "worksheet" 1742005323.14147 0
-  "worksheet.xdv" 1742005319 6528 c5db4e8f8c1f1c156cb21ca003c81da8 "xelatex"
+["xdvipdfmx"] 1746690005.94108 "worksheet.xdv" "worksheet.pdf" "worksheet" 1746690008.52793 0
+  "worksheet.xdv" 1746690005 6588 770d87f889b65140dc505786b9fb66d7 "xelatex"
   (generated)
   "worksheet.pdf"
   (rewritten before read)
-["xelatex"] 1742005317.09882 "c:/Users/Janicke.Luke/Documents/LaTeX/Custom Worksheet Class/worksheet.tex" "worksheet.xdv" "worksheet" 1742005323.13977 0
-  "c:/Users/Janicke.Luke/Documents/LaTeX/Custom Worksheet Class/worksheet.tex" 1742005156 1492 32d03f8a2e765a503ef466c61ab3bfa9 ""
+["xelatex"] 1746689988.69793 "c:/Users/Janicke.Luke/Documents/LaTeX/Custom LaTeX Worksheet Class/worksheet.tex" "worksheet.xdv" "worksheet" 1746690008.5254 0
+  "c:/Users/Janicke.Luke/Documents/LaTeX/Custom LaTeX Worksheet Class/worksheet.tex" 1746689982 1498 fc22ec434368476ffa9b4fca6ca573a4 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1732069318 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1732066059 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty" 1732070363 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -26,9 +26,9 @@
   "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1732065815 42021 a58d36c7ede3d2fc9f93da62d691ddff ""
   "c:/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1732077601 5879435 addfdc3e708515718356476bd0ac1628 ""
   "c:/texlive/2024/texmf.cnf" 1732077361 713 e69b156964470283e0530f5060668171 ""
-  "worksheet.aux" 1742005319 32 3985256e7290058c681f74d7a3565a19 "xelatex"
+  "worksheet.aux" 1746690005 32 3985256e7290058c681f74d7a3565a19 "xelatex"
   "worksheet.cls" 1742005314 2971 81dd1bc0ef1bad9b667e69040c1dbcb7 ""
-  "worksheet.tex" 1742005156 1492 32d03f8a2e765a503ef466c61ab3bfa9 ""
+  "worksheet.tex" 1746689982 1498 fc22ec434368476ffa9b4fca6ca573a4 ""
   (generated)
   "worksheet.aux"
   "worksheet.log"
