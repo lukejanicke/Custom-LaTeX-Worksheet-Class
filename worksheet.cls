@@ -5,11 +5,27 @@
 \LoadClass[a4paper]{article}
 
 % Required packages
-\RequirePackage[margin=2cm]{geometry} % Page geometry
-\RequirePackage{array}                % Enhanced table features
-\RequirePackage{amsmath}              % For math environments
-\RequirePackage{multicol}             % For multiple columns
-\RequirePackage{calc}                 % For width calculations
+\RequirePackage[margin=2cm]{geometry}
+\RequirePackage{amsmath}
+\RequirePackage{multicol}
+\RequirePackage{xparse}
+\RequirePackage{etoolbox}
+\RequirePackage{tabularx}
+
+% Width of the question-number column
+\newlength{\questionIndent}
+\setlength{\questionIndent}{1cm}
+
+% Helper to indent & typeset the parts block
+% #1 = number of columns, #2 = the \part{…} code
+\newcommand{\wsc@printparts}[2]{%
+  \hspace*{\questionIndent}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\questionIndent\relax}%
+    \begin{multicols}{#1}\raggedcolumns
+      #2
+    \end{multicols}%
+  \end{minipage}%
+}
 
 % No header or footer
 \pagestyle{empty}
@@ -24,78 +40,36 @@
 % Format for part letters
 \renewcommand{\thepartcounter}{(\alph{partcounter})}
 
+% Helper command for question parts
+\RenewDocumentCommand{\part}{m}{%
+  \stepcounter{partcounter}%
+  \noindent
+  \makebox[1cm][l]{\thepartcounter}%
+  #1\par%
+}
+
 % Command to set the number of columns for parts
 \newcommand{\setpartcolumns}[1]{\def\partcolumns{#1}}
 \setpartcolumns{3} % Default to 3 columns
 
-% Helper command for question parts
-\renewcommand{\part}[1]{%
-  \stepcounter{partcounter}%
-  \noindent%
-  \makebox[1cm][l]{\thepartcounter}#1\par%
-}
-
-% For backward compatibility
-\newcommand{\questionpart}[1]{%
-  \stepcounter{partcounter}%
-  \makebox[1cm][l]{\thepartcounter}#1\par%
-}
-
-% Basic question without parts
-\makeatletter
-\def\question{\@ifnextchar[{\@questionopt}{\@questionnoopt}}
-
-\def\@questionopt[#1]#2{%
+% Two-column container for every question:
+\NewDocumentCommand{\question}{O{\partcolumns} m m}{%
   \stepcounter{questioncounter}%
   \setcounter{partcounter}{0}%
-  \noindent%
-  \makebox[1cm][l]{\thequestioncounter}%
-  \def\partcolumns{#1}%
-  \setlength{\columnsep}{10pt}% Set column separation
-  \setlength{\columnseprule}{0pt}% No rule between columns
-  \begin{multicols}{\partcolumns}%
-  #2%
-  \end{multicols}%
-  \par\vspace{\baselineskip}%
-}
-
-\def\@questionnoopt#1{%
-  \@ifnextchar\bgroup{\@questionwithintro{#1}}{\@questionbasic{#1}}%
-}
-
-\def\@questionbasic#1{%
-  \stepcounter{questioncounter}%
-  \setcounter{partcounter}{0}%
-  \noindent%
-  \makebox[1cm][l]{\thequestioncounter}#1\par\vspace{\baselineskip}%
-}
-
-\def\@questionwithintro#1#2{%
-  \stepcounter{questioncounter}%
-  \setcounter{partcounter}{0}%
-  \noindent%
-  \makebox[1cm][l]{\thequestioncounter}#1\par%
-  \noindent\hspace{1cm}%
-  \setlength{\columnsep}{10pt}% Set column separation
-  \setlength{\columnseprule}{0pt}% No rule between columns
-  \begin{multicols}{\partcolumns}%
-  #2%
-  \end{multicols}%
-  \par\vspace{\baselineskip}%
-}
-\makeatother
-
-% Question with introduction and parts (backward compatibility)
-\newcommand{\questionwithintro}[2]{%
-  \stepcounter{questioncounter}%
-  \setcounter{partcounter}{0}%
-  \noindent%
-  \makebox[1cm][l]{\thequestioncounter}#1\par%
-  \noindent\hspace{1cm}%
-  \setlength{\columnsep}{10pt}% Set column separation
-  \setlength{\columnseprule}{0pt}% No rule between columns
-  \begin{multicols}{\partcolumns}%
-    #2%
-  \end{multicols}%
-  \par\vspace{\baselineskip}%
+  % Begin a 2-col box:
+  \noindent
+  \begin{tabularx}{\textwidth}{@{}p{1cm}@{}X@{}}
+    % Col 1: question number
+    \thequestioncounter
+    &
+    % Col 2: either intro+parts or parts-only
+    \ifblank{#2}{
+      \wsc@printparts{#1}{#3}
+    }{
+      % intro+parts
+      #2\par
+      \wsc@printparts{#1}{#3}
+    }
+  \end{tabularx}%
+  \vspace{1\baselineskip}%
 }

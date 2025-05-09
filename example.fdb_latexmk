@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1746690005.94108 "worksheet.xdv" "worksheet.pdf" "worksheet" 1746690008.52793 0
-  "worksheet.xdv" 1746690005 6588 770d87f889b65140dc505786b9fb66d7 "xelatex"
+["xdvipdfmx"] 1746694795.36293 "example.xdv" "example.pdf" "example" 1746694797.63171 0
+  "example.xdv" 1746694795 1972 6db36a3600156d58841cfd25dcf9930b "xelatex"
   (generated)
-  "worksheet.pdf"
+  "example.pdf"
   (rewritten before read)
-["xelatex"] 1746689988.69793 "c:/Users/Janicke.Luke/Documents/LaTeX/Custom LaTeX Worksheet Class/worksheet.tex" "worksheet.xdv" "worksheet" 1746690008.5254 0
-  "c:/Users/Janicke.Luke/Documents/LaTeX/Custom LaTeX Worksheet Class/worksheet.tex" 1746689982 1498 fc22ec434368476ffa9b4fca6ca573a4 ""
+["xelatex"] 1746694784.4769 "c:/Users/Janicke.Luke/Documents/LaTeX/Custom LaTeX Worksheet Class/example.tex" "example.xdv" "example" 1746694797.62912 0
+  "c:/Users/Janicke.Luke/Documents/LaTeX/Custom LaTeX Worksheet Class/example.tex" 1746692054 498 14f726edd8e45007db0ca390fb229961 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1732069318 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1732066059 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty" 1732070363 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -17,20 +17,23 @@
   "c:/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty" 1732066068 2444 71618ea5f2377e33b04fb97afdd0eac2 ""
   "c:/texlive/2024/texmf-dist/tex/latex/base/article.cls" 1732070950 20144 d7d3a15c7efd9458741458961c8a96e7 ""
   "c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo" 1732070950 8448 bd43e47d84d3704b7eabd59a92e43bf1 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1732068835 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty" 1732069551 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty" 1732069794 2671 70891d50dac933918b827d326687c6e8 ""
   "c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1732070875 31593 96a7f07a08af85a2bbfee2e0a9cdbb50 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty" 1732070888 6565 2919f322587b30d673a40dd5df2827a4 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1732070900 9783 ab4bee47700c04aadedb8da27591b0ab ""
   "c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty" 1732076521 14552 27664839421e418b87f56fa4c6f66b1a ""
-  "c:/texlive/2024/texmf-dist/tex/latex/tools/calc.sty" 1732076521 10214 61188260d324e94bc2f66825d7d3fdf4 ""
   "c:/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty" 1732076521 32879 f4cfa2226c995da5b04a89ee47abf182 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty" 1732076521 7243 e5dac1240636811edb77568b81818372 ""
   "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1732065815 42021 a58d36c7ede3d2fc9f93da62d691ddff ""
   "c:/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1732077601 5879435 addfdc3e708515718356476bd0ac1628 ""
   "c:/texlive/2024/texmf.cnf" 1732077361 713 e69b156964470283e0530f5060668171 ""
-  "worksheet.aux" 1746690005 32 3985256e7290058c681f74d7a3565a19 "xelatex"
-  "worksheet.cls" 1742005314 2971 81dd1bc0ef1bad9b667e69040c1dbcb7 ""
-  "worksheet.tex" 1746689982 1498 fc22ec434368476ffa9b4fca6ca573a4 ""
+  "example.aux" 1746694795 32 3985256e7290058c681f74d7a3565a19 "xelatex"
+  "example.tex" 1746692054 498 14f726edd8e45007db0ca390fb229961 ""
+  "worksheet.cls" 1746694780 2012 d109152106c93678a76a286bc07306c8 ""
   (generated)
-  "worksheet.aux"
-  "worksheet.log"
-  "worksheet.xdv"
+  "example.aux"
+  "example.log"
+  "example.xdv"
   (rewritten before read)
