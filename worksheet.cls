@@ -12,13 +12,19 @@
 \RequirePackage{etoolbox}
 \RequirePackage{tabularx}
 
-% Width of the question-number column
+% No header or footer
+\pagestyle{empty}
+
+% Define counters for questions and parts
+\newcounter{questioncounter}
+\newcounter{partcounter}[questioncounter]
+
+% Width of the question number column
 \newlength{\questionIndent}
 \setlength{\questionIndent}{1cm}
 
-% Helper to indent & typeset the parts block
-% #1 = number of columns, #2 = the \part{…} code
-\newcommand{\wsc@printparts}[2]{%
+% Parts block with specified number of columns
+\NewDocumentCommand{\parts}{O{3} m}{%
   \hspace*{\questionIndent}%
   \begin{minipage}[t]{\dimexpr\linewidth-\questionIndent\relax}%
     \begin{multicols}{#1}\raggedcolumns
@@ -26,13 +32,6 @@
     \end{multicols}%
   \end{minipage}%
 }
-
-% No header or footer
-\pagestyle{empty}
-
-% Define counters for questions and parts
-\newcounter{questioncounter}
-\newcounter{partcounter}[questioncounter]
 
 % Format for question numbers
 \renewcommand{\thequestioncounter}{\arabic{questioncounter}.}
@@ -44,32 +43,23 @@
 \RenewDocumentCommand{\part}{m}{%
   \stepcounter{partcounter}%
   \noindent
-  \makebox[1cm][l]{\thepartcounter}%
-  #1\par%
+  \makebox[0cm][l]{\thepartcounter}%
+  \hspace{1cm}#1\par%
 }
 
-% Command to set the number of columns for parts
-\newcommand{\setpartcolumns}[1]{\def\partcolumns{#1}}
-\setpartcolumns{3} % Default to 3 columns
 
-% Two-column container for every question:
-\NewDocumentCommand{\question}{O{\partcolumns} m m}{%
+% Question block with indented content and number
+\NewDocumentEnvironment{question}{+b}{%
   \stepcounter{questioncounter}%
   \setcounter{partcounter}{0}%
-  % Begin a 2-col box:
   \noindent
   \begin{tabularx}{\textwidth}{@{}p{1cm}@{}X@{}}
-    % Col 1: question number
-    \thequestioncounter
-    &
-    % Col 2: either intro+parts or parts-only
-    \ifblank{#2}{
-      \wsc@printparts{#1}{#3}
-    }{
-      % intro+parts
-      #2\par
-      \wsc@printparts{#1}{#3}
-    }
+    \thequestioncounter &
+    \begin{minipage}[t]{\dimexpr\linewidth-\questionIndent\relax}%
+      #1
+    \end{minipage}%
   \end{tabularx}%
   \vspace{1\baselineskip}%
 }
+
+% Removed obsolete \endquestion
